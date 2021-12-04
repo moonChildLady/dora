@@ -1,0 +1,34 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+about_dora:
+  url:  /about-dora-live
+  param: { module: about, action: index }
+  class: sfRequestRoute
+  requirements:
+    sf_method: [get]
+  options:
+    segment_separators: [/]
+
+tour:
+  url:  /tour-dates
+  param: { module: tour, action: index }
+  class: sfRequestRoute
+  requirements:
+    sf_method: [get]
+  options:
+    segment_separators: [/]
+
+# default rules
+homepage:
+  url:   /
+  param: { module: main, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
